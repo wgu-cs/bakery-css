@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visit North Star Bakery in Maple Grove, check our hours, or send a pre-order or inquiry request.">
+  <title>North Star Bakery — Contact & Pre-Orders</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html" aria-label="North Star Bakery — home">
+      <img src="bakery-logo_c.png" alt="North Star Bakery logo: a loaf of bread with a strand of wheat in the center" width="220" height="188">
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section>
+      <h1>Contact & Pre-Orders</h1>
+      <p>
+        Stop by the shop, call ahead, or use the form below to place a pre-order or ask a question. For
+        custom cakes and large-event orders, please give us at least five days' notice and use the
+        "Custom cake / event quote" request type so the right person picks it up.
+      </p>
+    </section>
+
+    <section>
+      <h2>Location & hours</h2>
+      <address>
+        North Star Bakery<br>
+        42 Lantern Street<br>
+        Maple Grove, ST 00000<br>
+        <a href="tel:+11234567890">Call (123) 456-7890</a><br>
+        <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a>
+      </address>
+      <p>
+        <strong>Hours:</strong><br>
+        Tuesday-Sunday, 7 a.m.-6 p.m.<br>
+        Closed Mondays
+      </p>
+      <p>
+        <strong>Pickup of pre-orders:</strong> at the counter on your requested date. We'll confirm
+        by email or phone once your order is received.
+      </p>
+    </section>
+
+    <section>
+      <h2>Pre-order & inquiry request</h2>
+      <p><small>Fields marked with an asterisk (*) are required.</small></p>
+
+      <form action="https://northstarbakery.example/requests" method="post">
+        <fieldset>
+          <legend>Your contact details</legend>
+
+          <p>
+            <label for="name">Full name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              minlength="2"
+              maxlength="80"
+              required
+              placeholder="e.g. Jordan Rivera">
+          </p>
+
+          <p>
+            <label for="email">Email address <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="e.g. you@example.com">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your request</legend>
+
+          <p>
+            <label for="request-type">Request type <span aria-hidden="true">*</span></label>
+            <select id="request-type" name="request_type" required>
+              <option value="" selected disabled> -  choose one  - </option>
+              <option value="preorder">Pre-order (bread, pastries, everyday items)</option>
+              <option value="cake">Custom cake / event quote</option>
+              <option value="question">General question</option>
+              <option value="wholesale">Wholesale / café account</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="pickup-date">Preferred pickup date <span aria-hidden="true">*</span></label>
+            <input
+              type="date"
+              id="pickup-date"
+              name="pickup_date"
+              min="2026-01-01"
+              required>
+            <small>We're closed Mondays; for custom cakes please choose a date at least 5 days out.</small>
+          </p>
+
+          <p>
+            <label for="item-details">Item details <span aria-hidden="true">*</span></label>
+            <textarea
+              id="item-details"
+              name="item_details"
+              rows="5"
+              minlength="5"
+              required
+              placeholder="Tell us what you'd like: items, quantities, sizes, flavors, serving count, or your question."></textarea>
+          </p>
+
+          <p>
+            <label for="allergy-notes">Allergy notes <small>(optional)</small></label>
+            <textarea
+              id="allergy-notes"
+              name="allergy_notes"
+              rows="3"
+              maxlength="300"
+              placeholder="List any allergies or dietary needs (nuts, gluten, dairy, vegan, kosher, etc.). We will follow up if we have questions."></textarea>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>How would you like us to reply?</legend>
+          <p>
+            <label><input type="radio" id="reply-email" name="reply_method" value="email" checked> Email</label>
+          </p>
+          <p>
+            <label><input type="radio" id="reply-phone" name="reply_method" value="phone"> Phone</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Submit request</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <strong>North Star Bakery</strong> * 42 Lantern Street, Maple Grove<br>
+      Tuesday-Sunday, 7 a.m.-6 p.m. * Closed Mondays<br>
+      <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a>
+      * <a href="tel:+11234567890">Call (123) 456-7890</a>
+    </p>
+    <p><small>&copy; 2026 North Star Bakery. Made by hand in Maple Grove.</small></p>
+  </footer>
+</body>
+</html>
