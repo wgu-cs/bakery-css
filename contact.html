@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Visit North Star Bakery in Maple Grove, check our hours, or send a pre-order or inquiry request.">
   <title>North Star Bakery — Contact & Pre-Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -33,7 +37,9 @@
       </p>
     </section>
 
-    <section>
+    <div class="contact-layout">
+
+    <section class="contact-info">
       <h2>Location & hours</h2>
       <address>
         North Star Bakery<br>
@@ -53,11 +59,11 @@
       </p>
     </section>
 
-    <section>
+    <section class="contact-form">
       <h2>Pre-order & inquiry request</h2>
       <p><small>Fields marked with an asterisk (*) are required.</small></p>
 
-      <form action="https://northstarbakery.example/requests" method="post">
+      <form id="pre-order" action="https://northstarbakery.example/requests" method="post">
         <fieldset>
           <legend>Your contact details</legend>
 
@@ -136,10 +142,10 @@
         <fieldset>
           <legend>How would you like us to reply?</legend>
           <p>
-            <label><input type="radio" id="reply-email" name="reply_method" value="email" checked> Email</label>
+            <label class="reply-option"><input type="radio" id="reply-email" name="reply_method" value="email" checked> Email</label>
           </p>
           <p>
-            <label><input type="radio" id="reply-phone" name="reply_method" value="phone"> Phone</label>
+            <label class="reply-option"><input type="radio" id="reply-phone" name="reply_method" value="phone"> Phone</label>
           </p>
         </fieldset>
 
@@ -148,6 +154,7 @@
         </p>
       </form>
     </section>
+    </div>
   </main>
 
   <footer>

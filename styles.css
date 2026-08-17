@@ -1,0 +1,580 @@
+/* ============================================================
+   North Star Bakery - styles.css
+
+   Design system
+   - Palette (4 main colors):
+       cream    #FFF8F0  page background
+       brown    #6B3E26  headings, navigation, emphasis
+       peach    #D88C5A  accents, buttons, highlights
+       charcoal #2F2A26  body text, footer background
+
+     Tints of these colors are used for card backgrounds and
+     soft borders; no extra hues are introduced.
+
+   - Typography (2 font families):
+       Fraunces  headings (warm, handmade serif)
+       Nunito    body text (friendly, rounded sans-serif)
+
+   - Layout: mobile-first, single column, then Flexbox rows
+     and multi-column layouts at larger breakpoints.
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Main palette */
+  --color-cream: #FFF8F0;
+  --color-brown: #6B3E26;
+  --color-peach: #D88C5A;
+  --color-charcoal: #2F2A26;
+
+  /* Tints of the main colors (backgrounds, chips, borders) */
+  --color-cream-deep: #F7EADB;   /* card background (cream tinted brown) */
+  --color-peach-soft: #F0CDB2;   /* price chips, link hover wash */
+  --color-muted: #6F6157;        /* secondary text (lightened charcoal) */
+
+  /* Typography */
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Nunito", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  /* Shape */
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(47, 42, 38, 0.14);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+}
+
+/* Visible-only-on-focus skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -3.75rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.6rem 1.1rem;
+  background-color: var(--color-brown);
+  color: var(--color-cream);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 12px 12px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Consistent, visible keyboard focus everywhere */
+:focus-visible {
+  outline: 3px solid var(--color-brown);
+  outline-offset: 2px;
+}
+
+footer :focus-visible,
+nav a[aria-current="page"]:focus-visible {
+  outline-color: var(--color-cream);
+}
+
+::selection {
+  background-color: var(--color-peach);
+  color: var(--color-charcoal);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--color-brown);
+  text-decoration-color: var(--color-peach);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-charcoal);
+  background-color: var(--color-peach-soft);
+  border-radius: 4px;
+}
+
+/* ---------- Header & navigation ---------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-cream);
+  border-bottom: 4px solid var(--color-peach);
+}
+
+header img {
+  display: block;
+  width: auto;
+  height: 4rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 4px;
+  color: var(--color-brown);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--color-peach);
+  color: var(--color-charcoal);
+}
+
+nav a[aria-current="page"],
+nav a[aria-current="page"]:hover {
+  background-color: var(--color-brown);
+  color: var(--color-cream);
+}
+
+/* ---------- Main layout ---------- */
+main {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* Dashed separators echo the "paper bag" feel of a bakery */
+main > section + section {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 2px dashed rgba(216, 140, 90, 0.65);
+}
+
+main p,
+main li {
+  max-width: 70ch;
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--color-brown);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 1.9rem);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Peach accent bar after every h2 for a consistent motif */
+h2::after {
+  content: "";
+  flex: 0 0 3.5rem;
+  height: 5px;
+  border-radius: 999px;
+  background-color: var(--color-peach);
+}
+
+main strong {
+  color: var(--color-brown);
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-brown);
+}
+
+main small {
+  color: var(--color-muted);
+}
+
+/* ---------- Images, figures & media ---------- */
+main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.storefront {
+  max-width: 54rem;
+}
+
+/* Breads photo doubles as a wide hero at the top of the page */
+.products-hero {
+  max-height: 22rem;
+  object-fit: cover;
+  margin-top: 1.5rem;
+}
+
+figure {
+  margin: 1.5rem 0;
+}
+
+figure img {
+  max-width: 30rem;
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  max-width: 34rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 34rem;
+}
+
+/* ---------- Cards ---------- */
+.product,
+.staff-list li,
+.contact-info,
+.audio-message {
+  background-color: var(--color-cream-deep);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.product,
+.staff-list li {
+  border-top: 4px solid var(--color-peach);
+}
+
+.audio-message {
+  border-left: 5px solid var(--color-peach);
+}
+
+/* Product category grid (breads / pastries / cakes) */
+.product-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* Signature loaf spotlight card */
+.signature {
+  margin-top: 3rem;
+  padding: 1.25rem;
+  background-color: var(--color-cream-deep);
+  border-top: 4px solid var(--color-peach);
+  border-radius: var(--radius);
+}
+
+.signature-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.signature-layout figure {
+  flex: 0 1 24rem;
+  margin: 0;
+}
+
+.signature-layout > div {
+  flex: 1 1 18rem;
+}
+
+/* Prices become small rounded chips so they never wrap mid-price */
+.price {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background-color: var(--color-peach-soft);
+  color: var(--color-brown);
+  font-weight: 700;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+/* ---------- Staff highlights ---------- */
+.staff-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.staff-list li {
+  margin: 0;
+  padding: 1rem 1.25rem;
+}
+
+/* ---------- Contact page ---------- */
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+address {
+  font-style: normal;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Form ---------- */
+form {
+  max-width: 42rem;
+}
+
+fieldset {
+  margin: 0 0 1.25rem;
+  padding: 1.25rem;
+  border: 2px solid var(--color-peach);
+  border-radius: var(--radius);
+  background-color: var(--color-cream-deep);
+}
+
+legend {
+  padding: 0.15rem 0.7rem;
+  background-color: var(--color-brown);
+  color: var(--color-cream);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+  color: var(--color-charcoal);
+  background-color: #FFFFFF;
+  border: 2px solid rgba(107, 62, 38, 0.35);
+  border-radius: 10px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(216, 140, 90, 0.6);
+  border-color: var(--color-brown);
+}
+
+form small {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.reply-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1.25rem 0.5rem 0;
+  font-weight: 600;
+}
+
+.reply-option input {
+  width: auto;
+}
+
+button[type="submit"],
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-charcoal);
+  background-color: var(--color-peach);
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+  background-color: var(--color-brown);
+  color: var(--color-cream);
+  border-radius: 999px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 3rem;
+  padding: 2.25rem 1.25rem;
+  background-color: var(--color-charcoal);
+  color: var(--color-cream);
+  text-align: center;
+}
+
+footer p {
+  margin: 0 0 0.75rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+footer strong {
+  color: var(--color-cream);
+}
+
+footer small {
+  color: rgba(255, 248, 240, 0.85);
+}
+
+footer a {
+  color: var(--color-cream);
+  text-decoration-color: var(--color-peach);
+}
+
+footer a:hover {
+  color: var(--color-peach);
+  background-color: transparent;
+}
+
+/* ---------- Responsive: larger screens ---------- */
+
+/* Tablets and up: more padding, staff cards side by side,
+   footer becomes a two-ended bar */
+@media (min-width: 720px) {
+  header {
+    padding: 1rem 2rem;
+  }
+
+  main {
+    padding: 2rem 2rem 3rem;
+  }
+
+  .staff-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .staff-list li {
+    flex: 1 1 16rem;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  footer p {
+    margin: 0;
+  }
+}
+
+/* Desktops: product categories sit in a row,
+   contact page splits info and form into two columns */
+@media (min-width: 900px) {
+  .product-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .product-grid > section {
+    flex: 1 1 19rem;
+  }
+
+  .signature-layout {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .contact-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contact-info {
+    flex: 0 0 20rem;
+  }
+
+  .contact-form {
+    flex: 1 1 26rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

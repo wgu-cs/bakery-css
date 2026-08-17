@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Browse North Star Bakery's breads, pastries, and cakes, with descriptions and pricing ranges. No online checkout — order at the counter or place a pre-order.">
   <title>North Star Bakery — Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -32,42 +36,44 @@
         is no online checkout  -  you can grab items at the counter, or
         <a href="contact.html">place a pre-order</a> to reserve what you want.
       </p>
-    </section>
-
-    <section>
-      <h2>Breads</h2>
       <img
+        class="products-hero"
         src="bakery-bread_c.png"
         alt="A rustic round of country sourdough on display, crackled crust with the perfect level of crisp."
         width="480"
         height="480">
+    </section>
+
+    <div class="product-grid">
+    <section class="product">
+      <h2>Breads</h2>
       <p>
         Our daily breads are built on a rye-infused sourdough starter and shaped by hand. We bake a
         rotating lineup, and take pre-orders for Saturday loaves.
       </p>
       <ul>
-        <li><strong>Country Sourdough</strong>  -  an open, custardy crumb with a dark crackly crust. <span>$7-$9 per loaf</span></li>
-        <li><strong>Seeded Multigrain</strong>  -  flax, sesame, sunflower, and a hint of honey. <span>$8-$10 per loaf</span></li>
-        <li><strong>Olive & Rosemary Ciabatta</strong>  -  slipper loaves salted with Castelvetrano olives. <span>$9-$12 per loaf</span></li>
-        <li><strong>Saturday-night Pizza Dough</strong>  -  cold-fermented balls ready for your home oven. <span>$5-$6 per ball</span></li>
+        <li><strong>Country Sourdough</strong>  -  an open, custardy crumb with a dark crackly crust. <span class="price">$7-$9 per loaf</span></li>
+        <li><strong>Seeded Multigrain</strong>  -  flax, sesame, sunflower, and a hint of honey. <span class="price">$8-$10 per loaf</span></li>
+        <li><strong>Olive & Rosemary Ciabatta</strong>  -  slipper loaves salted with Castelvetrano olives. <span class="price">$9-$12 per loaf</span></li>
+        <li><strong>Saturday-night Pizza Dough</strong>  -  cold-fermented balls ready for your home oven. <span class="price">$5-$6 per ball</span></li>
       </ul>
     </section>
 
-    <section>
+    <section class="product">
       <h2>Pastries</h2>
       <p>
         Laminated three days ahead and baked through the morning rush, our pastries are the reason
         there's a line on weekends. Arrive early for the best selection.
       </p>
       <ul>
-        <li><strong>Butter Croissants & Pain au Chocolat</strong> <span>$4-$5 each</span></li>
-        <li><strong>Morning Buns</strong>  -  cardamom and citrus, rolled in raw sugar. <span>$4.50 each</span></li>
-        <li><strong>Seasonal Galettes</strong>  -  free-form fruit tarts that change with the market. <span>$6-$8 each</span></li>
-        <li><strong>Kouign-Amann</strong>  -  caramelized Breton butter pastry, limited daily. <span>$5.50 each</span></li>
+        <li><strong>Butter Croissants & Pain au Chocolat</strong> <span class="price">$4-$5 each</span></li>
+        <li><strong>Morning Buns</strong>  -  cardamom and citrus, rolled in raw sugar. <span class="price">$4.50 each</span></li>
+        <li><strong>Seasonal Galettes</strong>  -  free-form fruit tarts that change with the market. <span class="price">$6-$8 each</span></li>
+        <li><strong>Kouign-Amann</strong>  -  caramelized Breton butter pastry, limited daily. <span class="price">$5.50 each</span></li>
       </ul>
     </section>
 
-    <section>
+    <section class="product">
       <h2>Cakes</h2>
       <p>
         Cakes are made to order for celebrations of every size. Because we bake from scratch in small
@@ -75,26 +81,37 @@
         events. See the <a href="contact.html">pre-order form</a> to start your request.
       </p>
       <ul>
-        <li><strong>Everyday Layer Cakes</strong>  -  vanilla, chocolate, or lemon, finished in buttercream. <span>$32-$48 (serves 8-12)</span></li>
-        <li><strong>Custom Celebration Cakes</strong>  -  designed around your occasion and flavors. <span>$60-$180</span></li>
-        <li><strong>Wedding & Event Cakes</strong>  -  tiered cakes for large gatherings, by quote. <span>Custom pricing</span></li>
-        <li><strong>Cupcakes & Petit Fours</strong>  -  by the dozen for parties and offices. <span>$3-$4 each, dozen minimum</span></li>
+        <li><strong>Everyday Layer Cakes</strong>  -  vanilla, chocolate, or lemon, finished in buttercream. <span class="price">$32-$48 (serves 8-12)</span></li>
+        <li><strong>Custom Celebration Cakes</strong>  -  designed around your occasion and flavors. <span class="price">$60-$180</span></li>
+        <li><strong>Wedding & Event Cakes</strong>  -  tiered cakes for large gatherings, by quote. <span class="price">Custom pricing</span></li>
+        <li><strong>Cupcakes & Petit Fours</strong>  -  by the dozen for parties and offices. <span class="price">$3-$4 each, dozen minimum</span></li>
       </ul>
     </section>
+    </div>
 
-    <section>
+    <section class="signature">
       <h2>The Signature Loaf</h2>
-      <figure>
-        <img
-          src="bakery-signature-loaf_c.png"
-          alt="The North Star Signature Loaf: a round sourdough, dusted with flour, held on a towel by a baker"
-          width="480"
-          height="480">
-        <figcaption>
-          Our <strong>Signature Loaf</strong>  -  a two-day naturally leavened sourdough. Estimated $10 per loaf; pre-orders open Sunday evening for the
-          following week's bake.
-        </figcaption>
-      </figure>
+      <div class="signature-layout">
+        <figure>
+          <img
+            src="bakery-signature-loaf_c.png"
+            alt="The North Star Signature Loaf: a round sourdough, dusted with flour, held on a towel by a baker"
+            width="480"
+            height="480">
+          <figcaption>
+            Our <strong>Signature Loaf</strong>  -  a two-day naturally leavened sourdough, shaped
+            and scored by hand.
+          </figcaption>
+        </figure>
+        <div>
+          <p>
+            Baked in small batches, the Signature Loaf is the loaf our neighbors plan their
+            weekends around.<span class="price">$10 per loaf</span>. Pre-orders open
+            Sunday evening for the following week's bake.
+          </p>
+          <p><a href="contact.html">Reserve your Signature Loaf</a></p>
+        </div>
+      </div>
     </section>
   </main>
 

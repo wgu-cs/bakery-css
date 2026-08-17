@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The story of North Star Bakery, our sourcing philosophy, the people who bake for you, and a welcome message from our owner.">
   <title>North Star Bakery — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -27,13 +31,13 @@
     <section>
       <h1>Our Story</h1>
       <p>
-        North Star Bakery began with a single starter and a borrowed oven. In 2009, our founder Mae
+        North Star Bakery began with a single starter and a borrowed oven. In 2011, our founder Mae
         Ellison started selling loaves from a folding table at the Maple Grove farmers' market.
         Within a year there was a line every Saturday, and within three years we had a little shop with
         our name on the awning at 42 Lantern Street.
       </p>
       <p>
-        We named ourselves after the North Star because a bakery, at its best, is a small fixed point a
+        We named ourselves after the North Star because a bakery, at its best, is a fixed point a
         neighborhood steers toward  -  for a Saturday loaf, a birthday cake, or just a warm place on a
         cold morning. That is still what we aim to be.
       </p>
@@ -54,6 +58,7 @@
         <li>No artificial colors, flavors, or dough conditioners  -  just time and heat.</li>
       </ul>
       <img
+        class="storefront"
         src="bakery-storefront_c.png"
         alt="The North Star Bakery storefront with shelves of pastries and breads visible through the window"
         width="900"
@@ -63,10 +68,10 @@
     <section>
       <h2>Staff highlights</h2>
       <p>The hands behind the case:</p>
-      <ul>
+      <ul class="staff-list">
         <li>
           <strong>Mae Ellison  -  Owner & Head Baker.</strong>
-          Started the bakery in 2009 and still shapes the Signature Loaf every Sunday.
+          Started the bakery in 2011 and still shapes the Signature Loaf every Sunday.
         </li>
         <li>
           <strong>Devon Park  -  Pastry Lead.</strong>
@@ -84,11 +89,10 @@
       </ul>
     </section>
 
-    <section>
+    <section class="audio-message">
       <h2>A welcome message</h2>
       <p>
-        Prefer to hear it from Mae? Press play for a short audio welcome recorded one morning before the
-        oven was fully hot.
+        Press play to hear a short message from Mae, our founder, about our wonderful bread.
       </p>
       <audio controls preload="metadata">
         <source src="bakery-welcome_c.mp3" type="audio/mpeg">
